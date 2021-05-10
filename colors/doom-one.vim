@@ -73,24 +73,26 @@ let s:white      = '#efefef'
 
 let s:green_alt  = '#799033'
 
-let s:bg             = '#282c34'
+" let s:bg             = '#282c34'
+let s:bg             = '#00000000'
 let s:bg_alt         = '#21242b'
 let s:bg_highlight   = '#2E323C'
 let s:bg_popup       = '#3E4556'
 let s:bg_widget      = s:bg
-let s:bg_statusline  = s:bg_popup
-let s:bg_visual      = color#Lighten(s:base4, 0.3)
+let s:bg_statusline  = s:bg
+let s:bg_visual      = color#Lighten(s:dark_blue, 0.3)
 let s:bg_selection   = s:dark_blue
 let s:bg_highlighted = '#4A4A45'
+let s:bg_linenr    = s:bg
 
-let s:fg           = '#bbc2cf'
+" let s:fg           = '#bbc2cf'
+let s:fg           = '#d0d0d0'
 let s:fg_alt       = '#5B6268'
 let s:fg_widget    = s:fg
 let s:fg_conceal   = s:base4
 let s:fg_subtle    = s:base7
 let s:fg_highlight = color#Lighten(s:fg, 0.2)
-let s:fg_linenr    = s:base4
-
+let s:fg_linenr    = s:red
 
 let s:highlight       = s:blue
 let s:highlight_color = s:base0
@@ -126,7 +128,7 @@ call s:_('NormalPopupSubtle', s:base6,        s:bg_popup)
 call s:_('Cursor',           '', s:base0,  'reverse')
 call s:_('SecondaryCursor',  '', s:highlight, 'none')
 
-call s:_('Folded',           s:base7,  s:bg_highlight, 'none')
+call s:_('Folded',           s:violet,  s:bg, 'none')
 call s:_('FoldColumn',       s:fg_alt, s:bg_widget, '')
 call s:_('SignColumn',       '',       s:bg_widget, '')
 call s:_('ColorColumn',      '',       s:bg_highlight, '')
@@ -134,7 +136,8 @@ call s:_('ColorColumn',      '',       s:bg_highlight, '')
 call s:_('CursorLine',       '',          s:bg_highlight)
 call s:_('CursorColumn',     '',          s:bg_highlight)
 call s:_('CursorLineNr',     s:highlight, s:bg_highlight, 'none')
-call s:_('LineNr',           s:fg_linenr, s:bg_widget,    'none')
+" call s:_('LineNr',           s:fg_linenr, s:bg_widget,    'none')
+call s:_('LineNr',           s:fg_linenr, s:bg_linenr,    'none')
 
 call s:_('IndentGuide',      s:base4, '', '')
 call s:_('IndentGuidesEven', s:base4, '', '')
@@ -199,27 +202,6 @@ call s:_('BufferTabpages',       s:blue,           s:bg_statusline, 'bold')
 call s:_('BufferTabpageFill',    s:base4,          s:bg_other,    'bold')
 
 call s:_('BufferPart',        s:diff_info_fg,   s:diff_info_bg0, 'bold')
-
-if has("nvim") && get(g:, 'doom_one_terminal_colors', v:false)
-  let g:terminal_color_0 = s:bg
-  let g:terminal_color_1 = s:red
-  let g:terminal_color_2 = s:green_alt
-  let g:terminal_color_3 = s:orange
-  let g:terminal_color_4 = s:dark_blue
-  let g:terminal_color_5 = s:magenta
-  let g:terminal_color_6 = s:dark_cyan
-  let g:terminal_color_7 = s:fg
-  let g:terminal_color_8 = s:grey
-  let g:terminal_color_9 = s:orange
-  let g:terminal_color_10 = s:green
-  let g:terminal_color_11 = s:yellow
-  let g:terminal_color_12 = s:blue
-  let g:terminal_color_13 = s:violet
-  let g:terminal_color_14 = s:cyan
-  let g:terminal_color_15 = s:white
-  let g:terminal_color_background = s:bg
-  let g:terminal_color_foreground = s:fg
-endif
 
 " }}}
 " Search, Highlight, Conceal, Messages                                       {{{
@@ -342,7 +324,7 @@ call s:_('VariableBuiltin',      color#Lighten(s:magenta, 0.2), '',        'bold
 
 call s:_('Function',             s:yellow, '',        'none')
 call s:_('FunctionBuiltin',      s:orange, '',        'bold')
-call s:_('Method',               s:yellow, '',        'none')
+call s:_('Method',               s:yellow, '',        'bold')
 
 call s:_('Symbol',               s:magenta, '',        'none')
 call s:_('Control',              s:magenta, '',        'none')
