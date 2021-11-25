@@ -80,7 +80,7 @@ let s:bg_highlight   = '#2E323C'
 let s:bg_popup       = '#3E4556'
 let s:bg_widget      = s:bg
 let s:bg_statusline  = s:bg
-let s:bg_visual      = color#Lighten(s:dark_blue, 0.3)
+let s:bg_visual      = '#71279f'
 let s:bg_selection   = s:dark_blue
 let s:bg_highlighted = '#4A4A45'
 let s:bg_linenr    = s:bg
@@ -207,7 +207,7 @@ call s:_('BufferPart',        s:diff_info_fg,   s:diff_info_bg0, 'bold')
 " Search, Highlight, Conceal, Messages                                       {{{
 
 " let s:bg_search = color#Mix(s:bg, s:yellow, 0.2)
-let s:bg_search = s:yellow
+let s:bg_search = '#8819c2'
 
 call s:_('Search',          s:highlight_color, s:bg_search,      'none')
 call s:_('IncSearch',       s:highlight_color, s:bg_search,      'none')
